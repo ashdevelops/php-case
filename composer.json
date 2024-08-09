@@ -2,7 +2,7 @@
     "name": "ashdevelops/caseconvert",
     "autoload": {
         "psr-4": {
-            "Ashdevelops\\Caseconvert\\": "src/"
+            "CaseConverter\\": "src/"
         }
     },
     "authors": [
