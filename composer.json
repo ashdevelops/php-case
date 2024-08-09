@@ -1,0 +1,15 @@
+{
+    "name": "ashdevelops/caseconvert",
+    "autoload": {
+        "psr-4": {
+            "Ashdevelops\\Caseconvert\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ashdevelops",
+            "email": "ash.smith.dev@gmail.com"
+        }
+    ],
+    "require": {}
+}
