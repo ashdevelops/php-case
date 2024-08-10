@@ -4,7 +4,8 @@ namespace CaseConverter\Encoders;
 
 use CaseConverter\CaseType;
 
-abstract class AbstractEncoder implements Encoder {
+abstract class AbstractEncoder implements Encoder
+{
     public function encode(string $string, int $currentType): string
     {
         return match (CaseType::from($currentType)) {

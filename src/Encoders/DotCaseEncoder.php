@@ -2,7 +2,8 @@
 
 namespace CaseConverter\Encoders;
 
-class DotCaseEncoder extends AbstractEncoder {
+class DotCaseEncoder extends AbstractEncoder
+{
     public function encodeFromCamel(string $string) : string
     {
         $rebuiltString = '';

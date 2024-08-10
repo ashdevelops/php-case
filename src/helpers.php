@@ -55,7 +55,8 @@ function has_upper_chars(string $string) : bool
     return preg_match('/[A-Z]/', $string);
 }
 
-function repeats_uppercase_chars(string $string) : bool {
+function repeats_uppercase_chars(string $string) : bool
+{
     $foundUppercaseLast = false;
 
     foreach (str_split($string) as $character) {

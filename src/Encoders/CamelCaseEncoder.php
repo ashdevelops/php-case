@@ -2,7 +2,8 @@
 
 namespace CaseConverter\Encoders;
 
-class CamelCaseEncoder extends AbstractEncoder {
+class CamelCaseEncoder extends AbstractEncoder
+{
     public function encodeFromCamel(string $string) : string
     {
         return $string;

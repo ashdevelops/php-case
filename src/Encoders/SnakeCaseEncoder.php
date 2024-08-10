@@ -41,7 +41,8 @@ class SnakeCaseEncoder extends AbstractEncoder
         return str_replace('.', '_', $string);
     }
 
-    public function encodeFromUnknown(string $string): string {
+    public function encodeFromUnknown(string $string): string
+    {
         return $string;
     }
 }

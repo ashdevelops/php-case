@@ -10,7 +10,8 @@ use CaseConverter\Encoders\PascalCaseEncoder;
 use CaseConverter\Encoders\SnakeCaseEncoder;
 use Exception;
 
-class Cased {
+class Cased
+{
     private $s;
     private array $encoders;
 
@@ -39,7 +40,8 @@ class Cased {
         $this->encoders[$name] = $encoder;
     }
 
-    public function detectCaseType(string $s) : CaseType {
+    public function detectCaseType(string $s) : CaseType
+    {
         return Detector::detect($s);
     }
 

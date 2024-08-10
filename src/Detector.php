@@ -2,8 +2,10 @@
 
 namespace CaseConverter;
 
-class Detector {
-    public static function detect(string $s) : CaseType {
+class Detector
+{
+    public static function detect(string $s) : CaseType
+    {
         return match(true) {
             is_kebab_case($s) => CaseType::Kebab,
             is_snake_case($s) => CaseType::Snake,
