@@ -5,11 +5,11 @@ namespace CaseConverter;
 class Detector {
     public static function detect(string $s) : CaseType {
         return match(true) {
-            Helpers::isKebabCase($s) => CaseType::Kebab,
-            Helpers::isSnakeCase($s) => CaseType::Snake,
-            Helpers::isDotCase($s) => CaseType::Dot,
-            Helpers::isCamelCase($s) => CaseType::Camel,
-            Helpers::isPascalCase($s) => CaseType::Pascal,
+            is_kebab_case($s) => CaseType::Kebab,
+            is_snake_case($s) => CaseType::Snake,
+            is_dot_case($s) => CaseType::Dot,
+            is_camel_case($s) => CaseType::Camel,
+            is_pascal_case($s) => CaseType::Pascal,
             default => CaseType::Unknown
         };
     }
