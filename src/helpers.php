@@ -52,7 +52,7 @@ function has_lower_chars(string $string) : bool
 
 function has_upper_chars(string $string) : bool
 {
-    return preg_match('/[a-z]/', $string);
+    return preg_match('/[A-Z]/', $string);
 }
 
 function repeats_uppercase_chars(string $string) : bool {
