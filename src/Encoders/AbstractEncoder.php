@@ -7,20 +7,14 @@ use CaseConverter\CaseType;
 abstract class AbstractEncoder implements Encoder {
     public function encode(string $string, int $currentType): string
     {
-        switch (CaseType::from($currentType)) {
-            case CaseType::Camel:
-                return $this->encodeFromCamel($string);
-            case CaseType::Pascal:
-                return $this->encodeFromPascal($string);
-            case CaseType::Kebab:
-                return $this->encodeFromKebab($string);
-            case CaseType::Snake:
-                return $this->encodeFromSnake($string);
-            case CaseType::Dot:
-                return $this->encodeFromDot($string);
-            default:
-                return $this->encodeFromUnknown($string);
-        }
+        return match (CaseType::from($currentType)) {
+            CaseType::Camel => $this->encodeFromCamel($string),
+            CaseType::Pascal => $this->encodeFromPascal($string),
+            CaseType::Kebab => $this->encodeFromKebab($string),
+            CaseType::Snake => $this->encodeFromSnake($string),
+            CaseType::Dot => $this->encodeFromDot($string),
+            default => $this->encodeFromUnknown($string),
+        };
     }
 
     abstract function encodeFromCamel(string $string) : string;
