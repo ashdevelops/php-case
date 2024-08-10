@@ -76,7 +76,7 @@ class Cased {
             throw new Exception("Failed to resolve encoder for '" . $encoder . "'");
         }
 
-        $type = self::detectCaseType($string);
+        $type = $this->detectCaseType($string);
 
         return $this->encoders[$encoder]->encode($string, $type->value);
     }
