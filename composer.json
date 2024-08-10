@@ -3,7 +3,10 @@
     "autoload": {
         "psr-4": {
             "CaseConverter\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
@@ -11,5 +14,7 @@
             "email": "ash.smith.dev@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-ctype": "*"
+    }
 }
