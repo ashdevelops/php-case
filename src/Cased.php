@@ -20,9 +20,9 @@ class Cased {
         $this->assignEncoders();
     }
 
-    public static function from($s): Cased
+    public static function from(string $str): Cased
     {
-        return new Cased($s);
+        return new Cased($str);
     }
 
     private function assignEncoders()
