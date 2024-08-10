@@ -2,7 +2,7 @@
 
 namespace CaseConverter;
 
-class Detector
+class CaseDetector
 {
     public static function detect(string $s) : CaseType
     {

@@ -42,7 +42,7 @@ class Cased
 
     public function detectCaseType(string $s) : CaseType
     {
-        return Detector::detect($s);
+        return CaseDetector::detect($s);
     }
 
     private function isAllowedMagicMethod($methodName)
