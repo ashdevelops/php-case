@@ -1,10 +1,10 @@
 <?php
 
-namespace CaseConverter\Encoders;
+namespace CaseConverter\Converters;
 
-class SnakeCaseEncoder extends AbstractEncoder
+class SnakeCaseConverter extends AbstractConverter
 {
-    public function encodeFromCamel(string $string) : string
+    public function convertFromCamel(string $string) : string
     {
         $rebuiltString = '';
 
@@ -15,7 +15,7 @@ class SnakeCaseEncoder extends AbstractEncoder
         return strtolower($rebuiltString);
     }
 
-    public function encodeFromPascal(string $string) : string
+    public function convertFromPascal(string $string) : string
     {
         $rebuiltString = '';
 
@@ -26,22 +26,22 @@ class SnakeCaseEncoder extends AbstractEncoder
         return strtolower($rebuiltString);
     }
 
-    public function encodeFromKebab(string $string) : string
+    public function convertFromKebab(string $string) : string
     {
         return str_replace('-', '_', $string);
     }
 
-    public function encodeFromSnake(string $string): string
+    public function convertFromSnake(string $string): string
     {
         return $string;
     }
 
-    public function encodeFromDot(string $string) : string
+    public function convertFromDot(string $string) : string
     {
         return str_replace('.', '_', $string);
     }
 
-    public function encodeFromUnknown(string $string): string
+    public function convertFromUnknown(string $string): string
     {
         return $string;
     }

@@ -1,20 +1,20 @@
 <?php
 
-namespace CaseConverter\Encoders;
+namespace CaseConverter\Converters;
 
-class CamelCaseEncoder extends AbstractEncoder
+class CamelCaseConverter extends AbstractConverter
 {
-    public function encodeFromCamel(string $string) : string
+    public function convertFromCamel(string $string) : string
     {
         return $string;
     }
 
-    public function encodeFromPascal(string $string) : string
+    public function convertFromPascal(string $string) : string
     {
         return strtolower($string[0]) . substr($string, 1);
     }
 
-    public function encodeFromKebab(string $string) : string
+    public function convertFromKebab(string $string) : string
     {
         $rebuiltString = '';
 
@@ -26,7 +26,7 @@ class CamelCaseEncoder extends AbstractEncoder
         return $rebuiltString;
     }
 
-    public function encodeFromSnake(string $string) : string
+    public function convertFromSnake(string $string) : string
     {
         $rebuiltString = '';
 
@@ -38,7 +38,7 @@ class CamelCaseEncoder extends AbstractEncoder
         return $rebuiltString;
     }
 
-    public function encodeFromDot(string $string) : string
+    public function convertFromDot(string $string) : string
     {
         $rebuiltString = '';
 
@@ -50,7 +50,7 @@ class CamelCaseEncoder extends AbstractEncoder
         return $rebuiltString;
     }
 
-    public function encodeFromUnknown(string $string) : string
+    public function convertFromUnknown(string $string) : string
     {
         return $string;
     }

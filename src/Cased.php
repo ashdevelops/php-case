@@ -2,12 +2,12 @@
 
 namespace CaseConverter;
 
-use CaseConverter\Encoders\CamelCaseEncoder;
-use CaseConverter\Encoders\DotCaseEncoder;
-use CaseConverter\Encoders\Encoder;
-use CaseConverter\Encoders\KebabCaseEncoder;
-use CaseConverter\Encoders\PascalCaseEncoder;
-use CaseConverter\Encoders\SnakeCaseEncoder;
+use CaseConverter\Converters\CamelCaseConverter;
+use CaseConverter\Converters\DotCaseConverter;
+use CaseConverter\Converters\ConverterInterface;
+use CaseConverter\Converters\KebabCaseConverter;
+use CaseConverter\Converters\PascalCaseConverter;
+use CaseConverter\Converters\SnakeCaseConverter;
 use Exception;
 
 class Cased
@@ -28,14 +28,14 @@ class Cased
 
     private function assignEncoders()
     {
-        $this->registerEncoder('camel', new CamelCaseEncoder());
-        $this->registerEncoder('pascal', new PascalCaseEncoder());
-        $this->registerEncoder('kebab', new KebabCaseEncoder());
-        $this->registerEncoder('snake', new SnakeCaseEncoder());
-        $this->registerEncoder('dot', new DotCaseEncoder());
+        $this->registerEncoder('camel', new CamelCaseConverter());
+        $this->registerEncoder('pascal', new PascalCaseConverter());
+        $this->registerEncoder('kebab', new KebabCaseConverter());
+        $this->registerEncoder('snake', new SnakeCaseConverter());
+        $this->registerEncoder('dot', new DotCaseConverter());
     }
 
-    public function registerEncoder(string $name, Encoder $encoder)
+    public function registerEncoder(string $name, ConverterInterface $encoder)
     {
         $this->encoders[$name] = $encoder;
     }
