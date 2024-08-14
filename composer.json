@@ -1,5 +1,6 @@
 {
     "name": "ashdevelops/php-case",
+    "description": "Composer package to detect case styles from arbitrary strings and convert them to other styles. ",
     "autoload": {
         "psr-4": {
             "CaseConverter\\": "src/"
