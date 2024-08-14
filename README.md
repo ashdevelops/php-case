@@ -1,3 +1,4 @@
+[![Contributors][downloads-shield]][downloads-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -17,7 +18,7 @@ A simple library for converting arbitrary case style texts to other cases.
 ## Getting Started
 
 ### Prerequisites
-* PHP 8.1.0
+* PHP >= 8.1.0
 
 ### Installation
 
@@ -79,7 +80,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
+[downloads-shield]: https://img.shields.io/packagist/dt/ashdevelops/php-case.svg?style=for-the-badge
 [contributors-shield]: https://img.shields.io/github/contributors/ashdevelops/php-case.svg?style=for-the-badge
+[downloads-url]: https://packagist.org/packages/ashdevelops/php-case
 [contributors-url]: https://github.com/ashdevelops/php-case/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/ashdevelops/php-case.svg?style=for-the-badge
 [forks-url]: https://github.com/ashdevelops/php-case/network/members
