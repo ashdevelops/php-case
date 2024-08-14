@@ -39,7 +39,7 @@ use CaseConverter\Validators\PascalCaseValidator;
 include 'vendor/autoload.php';
 
 $validators = [
-    PascalCaseValidator::class,
+    new PascalCaseValidator(),
 ];
 
 $arbitraryString = 'SomeArbitraryString';
