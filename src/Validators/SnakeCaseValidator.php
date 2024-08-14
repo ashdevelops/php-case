@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CaseConverter\Validators;
 
 use CaseConverter\CaseType;
 
 class SnakeCaseValidator implements ValidatorInterface
 {
-    const CASE = CaseType::Snake;
+    public const CASE = CaseType::Snake;
 
     public function isValid(string $string): bool
     {

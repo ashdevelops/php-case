@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CaseConverter\Validators;
 
 use CaseConverter\CaseType;
 
 class CamelCaseValidator implements ValidatorInterface
 {
-    const CASE = CaseType::Camel;
+    public const CASE = CaseType::Camel;
 
     public function isValid(string $string): bool
     {

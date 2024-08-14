@@ -1,6 +1,6 @@
 <?php
 
-namespace Converters;
+declare(strict_types=1);
 
 use CaseConverter\CaseType;
 use CaseConverter\Converters\CamelCaseConverter;

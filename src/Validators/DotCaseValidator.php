@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CaseConverter\Validators;
 
 use CaseConverter\CaseType;
 
 class DotCaseValidator implements ValidatorInterface
 {
-    const CASE = CaseType::Dot;
+    public const CASE = CaseType::Dot;
 
     public function isValid(string $string): bool
     {

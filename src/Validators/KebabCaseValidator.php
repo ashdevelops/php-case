@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CaseConverter\Validators;
 
 use CaseConverter\CaseType;
 
 class KebabCaseValidator implements ValidatorInterface
 {
-    const CASE = CaseType::Kebab;
+    public const CASE = CaseType::Kebab;
 
     public function isValid(string $string): bool
     {

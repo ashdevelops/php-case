@@ -1,7 +1,9 @@
 <?php
 
-use CaseConverter\CaseType;
+declare(strict_types=1);
+
 use CaseConverter\CaseDetector;
+use CaseConverter\CaseType;
 use CaseConverter\Validators\CamelCaseValidator;
 use CaseConverter\Validators\DotCaseValidator;
 use CaseConverter\Validators\KebabCaseValidator;

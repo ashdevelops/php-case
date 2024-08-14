@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function containsCharsOtherThan(string $string, string $needle): false|int
 {
     return preg_match('/[^' . $needle . ']/', $string);
