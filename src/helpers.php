@@ -1,16 +1,16 @@
 <?php
 
-function containsCharsOtherThan(string $string, string $needle) : bool
+function containsCharsOtherThan(string $string, string $needle) : false|int
 {
     return preg_match('/[^' . $needle . ']/', $string);
 }
 
-function hasLowerChars(string $string) : bool
+function hasLowerChars(string $string) : false|int
 {
     return preg_match('/[a-z]/', $string);
 }
 
-function hasUpperChars(string $string) : bool
+function hasUpperChars(string $string) : false|int
 {
     return preg_match('/[A-Z]/', $string);
 }
