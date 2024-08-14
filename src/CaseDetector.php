@@ -19,8 +19,9 @@ class CaseDetector
         $case = CaseType::Unknown;
 
         foreach ($this->validators as $validator) {
-            if ($validator->isValid($string)) {
-                $case = $validator::CASE;
+            $validatorInstance = new $validator;
+            if ($validatorInstance->isValid($string)) {
+                $case = $validatorInstance::CASE;
                 break;
             }
         }
