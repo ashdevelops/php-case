@@ -4,7 +4,7 @@ namespace CaseConverter\Converters;
 
 use CaseConverter\CaseType;
 
-class SnakeCaseConverter extends AbstractConverter
+class SnakeCaseConverter implements ConverterInterface
 {
     public function convert(string $string, CaseType $type): string
     {
