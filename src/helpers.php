@@ -1,45 +1,5 @@
 <?php
 
-function isCamelCase(string $string) : bool
-{
-    return !ctype_upper($string[0]) &&
-        !repeatsUppercaseChars($string) &&
-        hasUpperChars($string) &&
-        !ctype_upper(substr($string, strlen($string) - 1));
-}
-
-function isPascalCase(string $string) : bool
-{
-    return ctype_upper($string[0]) &&
-        !repeatsUppercaseChars($string) &&
-        hasLowerChars($string) &&
-        !ctype_upper(substr($string, strlen($string) - 1));
-}
-
-function isKebabCase(string $string) : bool
-{
-    return str_contains($string, '-') &&
-        containsCharsOtherThan($string, '-') &&
-        substr($string, 0, strlen($string)) != '-' &&
-        substr($string, - strlen($string)) != '-';
-}
-
-function isSnakeCase(string $string) : bool
-{
-    return str_contains($string, '_') &&
-        containsCharsOtherThan($string, '_') &&
-        substr($string, 0, strlen($string)) != '_' &&
-        substr($string, - strlen($string)) != '_';
-}
-
-function isDotCase(string $string) : bool
-{
-    return str_contains($string, '.') &&
-        containsCharsOtherThan($string, '.') &&
-        substr($string, 0, strlen($string)) != '.' &&
-        substr($string, - strlen($string)) != '.';
-}
-
 function containsCharsOtherThan(string $string, string $needle) : bool
 {
     return preg_match('/[^' . $needle . ']/', $string);

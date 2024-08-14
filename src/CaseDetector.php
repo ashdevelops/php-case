@@ -2,17 +2,29 @@
 
 namespace CaseConverter;
 
+use CaseConverter\Validators\ValidatorInterface;
+
 class CaseDetector
 {
-    public static function detect(string $s) : CaseType
+    public function __construct(private array $validators) {
+    }
+
+    public function addValidator(ValidatorInterface $validator): void
     {
-        return match(true) {
-            isKebabCase($s) => CaseType::Kebab,
-            isSnakeCase($s) => CaseType::Snake,
-            isDotCase($s) => CaseType::Dot,
-            isCamelCase($s) => CaseType::Camel,
-            isPascalCase($s) => CaseType::Pascal,
-            default => CaseType::Unknown
-        };
+        $this->validators[] = $validator;
+    }
+
+    public function detect(string $string): CaseType
+    {
+        $case = CaseType::Unknown;
+
+        foreach ($this->validators as $validator) {
+            if ($validator->isValid($string)) {
+                $case = $validator::CASE;
+                break;
+            }
+        }
+
+        return $case;
     }
 }
