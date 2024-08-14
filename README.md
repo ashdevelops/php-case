@@ -38,12 +38,8 @@ use CaseConverter\Validators\PascalCaseValidator;
 
 include 'vendor/autoload.php';
 
-$validators = [
-    new PascalCaseValidator(),
-];
-
 $arbitraryString = 'SomeArbitraryString';
-$detector = new CaseDetector($validators);
+$detector = new CaseDetector(new PascalCaseValidator());
 
 echo $detector->detect($arbitraryString)->name; // string(6) "Pascal"
 ```
