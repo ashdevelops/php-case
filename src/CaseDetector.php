@@ -8,7 +8,8 @@ class CaseDetector
 {
     private array $validators;
 
-    public function __construct(ValidatorInterface ...$validators) {
+    public function __construct(ValidatorInterface ...$validators)
+    {
         $this->validators = $validators;
     }
 

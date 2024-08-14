@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="PrimaryStandard">
+    <description>Primary coding standard</description>
+    <rule ref="PEAR">
+        <exclude name="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+        <exclude name="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+    </rule>
+</ruleset>

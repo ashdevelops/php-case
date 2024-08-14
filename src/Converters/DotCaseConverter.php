@@ -8,7 +8,7 @@ class DotCaseConverter implements ConverterInterface
 {
     public function convert(string $string, CaseType $type): string
     {
-        return match($type) {
+        return match ($type) {
             CaseType::Camel => $this->convertFromCamel($string),
             CaseType::Pascal => $this->convertFromPascal($string),
             CaseType::Kebab => $this->convertFromKebab($string),
@@ -33,7 +33,9 @@ class DotCaseConverter implements ConverterInterface
         $rebuiltString = '';
 
         foreach (str_split($string) as $key => $piece) {
-            $rebuiltString .= (ctype_upper($piece) && $key > 0) ? '.' . $piece : $piece;
+            $rebuiltString .= (ctype_upper($piece) && $key > 0) ?
+                '.' . $piece :
+                $piece;
         }
 
         return strtolower($rebuiltString);

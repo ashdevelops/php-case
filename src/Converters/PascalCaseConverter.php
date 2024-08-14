@@ -8,7 +8,7 @@ class PascalCaseConverter implements ConverterInterface
 {
     public function convert(string $string, CaseType $type): string
     {
-        return match($type) {
+        return match ($type) {
             CaseType::Camel => $this->convertFromCamel($string),
             CaseType::Kebab => $this->convertFromKebab($string),
             CaseType::Snake => $this->convertFromSnake($string),

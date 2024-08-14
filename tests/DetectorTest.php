@@ -28,34 +28,39 @@ final class DetectorTest extends TestCase
     {
         $this->assertSame(
             $this->detector->detect('camelString'),
-            CaseType::Camel);
+            CaseType::Camel
+        );
     }
 
     public function testPascalDetection() : void
     {
         $this->assertSame(
             $this->detector->detect('PascalString'),
-            CaseType::Pascal);
+            CaseType::Pascal
+        );
     }
 
     public function testSnakeDetection() : void
     {
         $this->assertSame(
             $this->detector->detect('snake_string'),
-            CaseType::Snake);
+            CaseType::Snake
+        );
     }
 
     public function testKebabDetection() : void
     {
         $this->assertSame(
             $this->detector->detect('kebab-string'),
-            CaseType::Kebab);
+            CaseType::Kebab
+        );
     }
 
     public function testDotDetection() : void
     {
         $this->assertSame(
             $this->detector->detect('dot.string'),
-            CaseType::Dot);
+            CaseType::Dot
+        );
     }
 }
