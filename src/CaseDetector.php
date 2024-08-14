@@ -7,11 +7,11 @@ class CaseDetector
     public static function detect(string $s) : CaseType
     {
         return match(true) {
-            is_kebab_case($s) => CaseType::Kebab,
-            is_snake_case($s) => CaseType::Snake,
-            is_dot_case($s) => CaseType::Dot,
-            is_camel_case($s) => CaseType::Camel,
-            is_pascal_case($s) => CaseType::Pascal,
+            isKebabCase($s) => CaseType::Kebab,
+            isSnakeCase($s) => CaseType::Snake,
+            isDotCase($s) => CaseType::Dot,
+            isCamelCase($s) => CaseType::Camel,
+            isPascalCase($s) => CaseType::Pascal,
             default => CaseType::Unknown
         };
     }
