@@ -6,7 +6,7 @@ use CaseConverter\Validators\ValidatorInterface;
 
 class CaseDetector
 {
-    public function __construct(private array $validators) {
+    public function __construct(private ValidatorInterface $validators) {
     }
 
     public function addValidator(ValidatorInterface $validator): void
