@@ -1,21 +1,21 @@
 <?php
 
-function containsCharsOtherThan(string $string, string $needle) : false|int
+function containsCharsOtherThan(string $string, string $needle): false|int
 {
     return preg_match('/[^' . $needle . ']/', $string);
 }
 
-function hasLowerChars(string $string) : false|int
+function hasLowerChars(string $string): false|int
 {
     return preg_match('/[a-z]/', $string);
 }
 
-function hasUpperChars(string $string) : false|int
+function hasUpperChars(string $string): false|int
 {
     return preg_match('/[A-Z]/', $string);
 }
 
-function repeatsUppercaseChars(string $string) : bool
+function repeatsUppercaseChars(string $string): bool
 {
     $foundUppercaseLast = false;
 

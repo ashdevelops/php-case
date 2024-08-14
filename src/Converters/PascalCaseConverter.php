@@ -17,12 +17,12 @@ class PascalCaseConverter implements ConverterInterface
         };
     }
 
-    public function convertFromCamel(string $string) : string
+    public function convertFromCamel(string $string): string
     {
         return strtoupper($string[0]) . substr($string, 1);
     }
 
-    public function convertFromKebab(string $string) : string
+    public function convertFromKebab(string $string): string
     {
         $rebuiltString = '';
 
@@ -34,7 +34,7 @@ class PascalCaseConverter implements ConverterInterface
         return $rebuiltString;
     }
 
-    public function convertFromSnake(string $string) : string
+    public function convertFromSnake(string $string): string
     {
         $rebuiltString = '';
 
@@ -46,7 +46,7 @@ class PascalCaseConverter implements ConverterInterface
         return $rebuiltString;
     }
 
-    public function convertFromDot(string $string) : string
+    public function convertFromDot(string $string): string
     {
         $rebuiltString = '';
 

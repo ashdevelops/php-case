@@ -17,12 +17,12 @@ class CamelCaseConverter implements ConverterInterface
         };
     }
 
-    private function convertFromPascal(string $string) : string
+    private function convertFromPascal(string $string): string
     {
         return strtolower($string[0]) . substr($string, 1);
     }
 
-    private function convertFromKebab(string $string) : string
+    private function convertFromKebab(string $string): string
     {
         $rebuiltString = '';
 
@@ -34,7 +34,7 @@ class CamelCaseConverter implements ConverterInterface
         return $rebuiltString;
     }
 
-    private function convertFromSnake(string $string) : string
+    private function convertFromSnake(string $string): string
     {
         $rebuiltString = '';
 
@@ -46,7 +46,7 @@ class CamelCaseConverter implements ConverterInterface
         return $rebuiltString;
     }
 
-    private function convertFromDot(string $string) : string
+    private function convertFromDot(string $string): string
     {
         $rebuiltString = '';
 

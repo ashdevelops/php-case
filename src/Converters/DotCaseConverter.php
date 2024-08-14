@@ -17,7 +17,7 @@ class DotCaseConverter implements ConverterInterface
         };
     }
 
-    public function convertFromCamel(string $string) : string
+    public function convertFromCamel(string $string): string
     {
         $rebuiltString = '';
 
@@ -28,7 +28,7 @@ class DotCaseConverter implements ConverterInterface
         return strtolower($rebuiltString);
     }
 
-    public function convertFromPascal(string $string) : string
+    public function convertFromPascal(string $string): string
     {
         $rebuiltString = '';
 
@@ -41,12 +41,12 @@ class DotCaseConverter implements ConverterInterface
         return strtolower($rebuiltString);
     }
 
-    public function convertFromKebab(string $string) : string
+    public function convertFromKebab(string $string): string
     {
         return str_replace('-', '.', $string);
     }
 
-    public function convertFromSnake(string $string) : string
+    public function convertFromSnake(string $string): string
     {
         return str_replace('_', '.', $string);
     }

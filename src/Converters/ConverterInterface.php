@@ -6,5 +6,5 @@ use CaseConverter\CaseType;
 
 interface ConverterInterface
 {
-    public function convert(string $string, CaseType $type) : string;
+    public function convert(string $string, CaseType $type): string;
 }

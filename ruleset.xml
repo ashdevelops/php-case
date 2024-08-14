@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <ruleset name="PrimaryStandard">
     <description>Primary coding standard</description>
+    <rule ref="PSR2"/>
+    <rule ref="PSR12"/>
     <rule ref="PEAR">
         <exclude name="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
         <exclude name="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+        <exclude name="PEAR.Commenting.FileComment.Missing"/>
+        <exclude name="PEAR.Commenting.ClassComment.Missing"/>
+        <exclude name="PEAR.Commenting.FunctionComment.Missing"/>
     </rule>
+    <rule ref="Generic.PHP.RequireStrictTypes"/>
 </ruleset>

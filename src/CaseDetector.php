@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace CaseConverter;
 
@@ -18,7 +18,7 @@ class CaseDetector
         $case = CaseType::Unknown;
 
         foreach ($this->validators as $validator) {
-            $validatorInstance = new $validator;
+            $validatorInstance = new $validator();
             if ($validatorInstance->isValid($string)) {
                 $case = $validatorInstance::CASE;
                 break;

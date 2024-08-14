@@ -24,7 +24,7 @@ final class DetectorTest extends TestCase
         );
     }
 
-    public function testCamelDetection() : void
+    public function testCamelDetection(): void
     {
         $this->assertSame(
             $this->detector->detect('camelString'),
@@ -32,7 +32,7 @@ final class DetectorTest extends TestCase
         );
     }
 
-    public function testPascalDetection() : void
+    public function testPascalDetection(): void
     {
         $this->assertSame(
             $this->detector->detect('PascalString'),
@@ -40,7 +40,7 @@ final class DetectorTest extends TestCase
         );
     }
 
-    public function testSnakeDetection() : void
+    public function testSnakeDetection(): void
     {
         $this->assertSame(
             $this->detector->detect('snake_string'),
@@ -48,7 +48,7 @@ final class DetectorTest extends TestCase
         );
     }
 
-    public function testKebabDetection() : void
+    public function testKebabDetection(): void
     {
         $this->assertSame(
             $this->detector->detect('kebab-string'),
@@ -56,7 +56,7 @@ final class DetectorTest extends TestCase
         );
     }
 
-    public function testDotDetection() : void
+    public function testDotDetection(): void
     {
         $this->assertSame(
             $this->detector->detect('dot.string'),
