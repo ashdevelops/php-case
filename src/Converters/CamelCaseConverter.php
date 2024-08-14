@@ -2,19 +2,27 @@
 
 namespace CaseConverter\Converters;
 
-class CamelCaseConverter extends AbstractConverter
+use CaseConverter\CaseType;
+
+class CamelCaseConverter implements ConverterInterface
 {
-    public function convertFromCamel(string $string) : string
+    public function convert(string $string, CaseType $type): string
     {
-        return $string;
+        return match($type) {
+            CaseType::Pascal => $this->convertFromPascal($string),
+            CaseType::Kebab => $this->convertFromKebab($string),
+            CaseType::Snake => $this->convertFromSnake($string),
+            CaseType::Dot => $this->convertFromDot($string),
+            default => $string
+        };
     }
 
-    public function convertFromPascal(string $string) : string
+    private function convertFromPascal(string $string) : string
     {
         return strtolower($string[0]) . substr($string, 1);
     }
 
-    public function convertFromKebab(string $string) : string
+    private function convertFromKebab(string $string) : string
     {
         $rebuiltString = '';
 
@@ -26,7 +34,7 @@ class CamelCaseConverter extends AbstractConverter
         return $rebuiltString;
     }
 
-    public function convertFromSnake(string $string) : string
+    private function convertFromSnake(string $string) : string
     {
         $rebuiltString = '';
 
@@ -38,7 +46,7 @@ class CamelCaseConverter extends AbstractConverter
         return $rebuiltString;
     }
 
-    public function convertFromDot(string $string) : string
+    private function convertFromDot(string $string) : string
     {
         $rebuiltString = '';
 
@@ -48,10 +56,5 @@ class CamelCaseConverter extends AbstractConverter
         }
 
         return $rebuiltString;
-    }
-
-    public function convertFromUnknown(string $string) : string
-    {
-        return $string;
     }
 }

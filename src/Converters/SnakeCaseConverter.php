@@ -2,8 +2,21 @@
 
 namespace CaseConverter\Converters;
 
+use CaseConverter\CaseType;
+
 class SnakeCaseConverter extends AbstractConverter
 {
+    public function convert(string $string, CaseType $type): string
+    {
+        return match($type) {
+            CaseType::Camel => $this->convertFromCamel($string),
+            CaseType::Pascal => $this->convertFromPascal($string),
+            CaseType::Kebab => $this->convertFromKebab($string),
+            CaseType::Dot => $this->convertFromDot($string),
+            default => $string
+        };
+    }
+
     public function convertFromCamel(string $string) : string
     {
         $rebuiltString = '';
@@ -31,18 +44,8 @@ class SnakeCaseConverter extends AbstractConverter
         return str_replace('-', '_', $string);
     }
 
-    public function convertFromSnake(string $string): string
-    {
-        return $string;
-    }
-
     public function convertFromDot(string $string) : string
     {
         return str_replace('.', '_', $string);
-    }
-
-    public function convertFromUnknown(string $string): string
-    {
-        return $string;
     }
 }

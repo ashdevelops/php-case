@@ -2,7 +2,9 @@
 
 namespace CaseConverter\Converters;
 
+use CaseConverter\CaseType;
+
 interface ConverterInterface
 {
-    public function convert(string $string, int $currentType) : string;
+    public function convert(string $string, CaseType $type) : string;
 }

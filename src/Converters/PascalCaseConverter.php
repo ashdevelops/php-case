@@ -2,16 +2,24 @@
 
 namespace CaseConverter\Converters;
 
-class PascalCaseConverter extends AbstractConverter
+use CaseConverter\CaseType;
+
+class PascalCaseConverter implements ConverterInterface
 {
+    public function convert(string $string, CaseType $type): string
+    {
+        return match($type) {
+            CaseType::Camel => $this->convertFromCamel($string),
+            CaseType::Kebab => $this->convertFromKebab($string),
+            CaseType::Snake => $this->convertFromSnake($string),
+            CaseType::Dot => $this->convertFromDot($string),
+            default => $string
+        };
+    }
+
     public function convertFromCamel(string $string) : string
     {
         return strtoupper($string[0]) . substr($string, 1);
-    }
-
-    public function convertFromPascal(string $string): string
-    {
-        return $string;
     }
 
     public function convertFromKebab(string $string) : string
@@ -48,10 +56,5 @@ class PascalCaseConverter extends AbstractConverter
         }
 
         return $rebuiltString;
-    }
-
-    public function convertFromUnknown(string $string): string
-    {
-        return $string;
     }
 }

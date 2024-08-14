@@ -2,8 +2,21 @@
 
 namespace CaseConverter\Converters;
 
-class DotCaseConverter extends AbstractConverter
+use CaseConverter\CaseType;
+
+class DotCaseConverter implements ConverterInterface
 {
+    public function convert(string $string, CaseType $type): string
+    {
+        return match($type) {
+            CaseType::Camel => $this->convertFromCamel($string),
+            CaseType::Pascal => $this->convertFromPascal($string),
+            CaseType::Kebab => $this->convertFromKebab($string),
+            CaseType::Snake => $this->convertFromSnake($string),
+            default => $string
+        };
+    }
+
     public function convertFromCamel(string $string) : string
     {
         $rebuiltString = '';
@@ -34,15 +47,5 @@ class DotCaseConverter extends AbstractConverter
     public function convertFromSnake(string $string) : string
     {
         return str_replace('_', '.', $string);
-    }
-
-    public function convertFromDot(string $string) : string
-    {
-        return $string;
-    }
-
-    public function convertFromUnknown(string $string) : string
-    {
-        return $string;
     }
 }

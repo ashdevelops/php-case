@@ -2,8 +2,21 @@
 
 namespace CaseConverter\Converters;
 
-class KebabCaseConverter extends AbstractConverter
+use CaseConverter\CaseType;
+
+class KebabCaseConverter implements ConverterInterface
 {
+    public function convert(string $string, CaseType $type): string
+    {
+        return match($type) {
+            CaseType::Camel => $this->convertFromCamel($string),
+            CaseType::Pascal => $this->convertFromPascal($string),
+            CaseType::Snake => $this->convertFromSnake($string),
+            CaseType::Dot => $this->convertFromDot($string),
+            default => $string
+        };
+    }
+
     public function convertFromCamel(string $string) : string
     {
         $rebuiltString = '';
@@ -26,11 +39,6 @@ class KebabCaseConverter extends AbstractConverter
         return strtolower($rebuiltString);
     }
 
-    public function convertFromKebab(string $string): string
-    {
-        return $string;
-    }
-
     public function convertFromSnake(string $string) : string
     {
         return str_replace('.', '-', $string);
@@ -39,10 +47,5 @@ class KebabCaseConverter extends AbstractConverter
     public function convertFromDot(string $string) : string
     {
         return str_replace('.', '-', $string);
-    }
-
-    public function convertFromUnknown(string $string): string
-    {
-        return $string;
     }
 }
