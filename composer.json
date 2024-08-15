@@ -21,11 +21,13 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^11",
-        "slevomat/coding-standard": "~8.0"
+        "slevomat/coding-standard": "~8.0",
+        "phpstan/phpstan": "^1.11"
     },
     "scripts": {
         "phpcs": "phpcs -s --standard=ruleset.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
         "phpcbf": "phpcbf -s --standard=ruleset.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1  src tests",
+        "phpstan": "vendor/bin/phpstan src tests --level 6",
         "test": "phpunit tests --bootstrap vendor/autoload.php"
     },
     "config": {

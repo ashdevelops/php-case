@@ -8,6 +8,9 @@ use CaseConverter\Validators\ValidatorInterface;
 
 class CaseDetector
 {
+    /**
+     * @var array<ValidatorInterface> $validators
+     */
     private array $validators;
 
     public function __construct(ValidatorInterface ...$validators)
