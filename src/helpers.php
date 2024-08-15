@@ -2,36 +2,24 @@
 
 declare(strict_types=1);
 
-function containsCharsOtherThan(string $string, string $needle): false|int
+namespace CaseConverter;
+
+function containsCharsOtherThan(string $string, string $needle): bool
 {
-    return preg_match('/[^' . $needle . ']/', $string);
+    return preg_match('/[' . preg_quote($needle) . ']/', $string) === 1;
 }
 
-function hasLowerChars(string $string): false|int
+function hasLowerChars(string $string): bool
 {
-    return preg_match('/[a-z]/', $string);
+    return preg_match('/[a-z]/', $string) === 1;
 }
 
-function hasUpperChars(string $string): false|int
+function hasUpperChars(string $string): bool
 {
-    return preg_match('/[A-Z]/', $string);
+    return preg_match('/[A-Z]/', $string) === 1;
 }
 
 function repeatsUppercaseChars(string $string): bool
 {
-    $foundUppercaseLast = false;
-
-    foreach (str_split($string) as $character) {
-        if (ctype_upper($character)) {
-            if ($foundUppercaseLast) {
-                return true;
-            }
-
-            $foundUppercaseLast = true;
-        } else {
-            $foundUppercaseLast = false;
-        }
-    }
-
-    return false;
+    return preg_match('/[A-Z]{2,}/', $string) === 1;
 }
